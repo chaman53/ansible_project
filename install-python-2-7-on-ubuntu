@@ -20,3 +20,7 @@ Step 4 – Check Python Version
 $ python2.7 -V
 
 Python 2.7.16
+
+##
+we can changes packge name and run python instated of python2.7
+sudo cp /usr/local/bin/python2.7 /usr/local/bin/python
