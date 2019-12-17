@@ -1,0 +1,12 @@
+---
+- hosts: ansible_node3_redhat
+  become: yes
+  tasks:
+  - name: install apache2 on redhat server
+    yum:
+       name: httpd
+       state: present
+  - name: Start service httpd if not started
+    service:
+       name: httpd
+       state: started
