@@ -1,0 +1,14 @@
+#Write a yaml file for my own education details
+---
+- Name: Kaushal kumar Chaman
+  Address: xyz
+  Education:
+   - 10th Board: BSEB
+     Percentage: 70
+     year: 2007
+   - 12th Board: BSEB
+     Percentage: 70
+     year: 2009
+   - Gradution: WBUT
+     Percentage: 80
+     year: 2013
