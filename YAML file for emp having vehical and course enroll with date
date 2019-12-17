@@ -1,0 +1,17 @@
+---
+- Name: Kaushal
+  Address: XYZ
+  vehicle:
+   - tata sumo
+   - maruti
+  Course:
+   - Name: devops
+   - date: 11-11-11
+- Name: Akash
+  Address: XYZ
+  vehicle:
+   - Yamnha
+   - maruti
+  Course:
+   - Name: AWS
+   - date: 11-11-11
