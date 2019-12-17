@@ -1,0 +1,12 @@
+#Write a yaml file for theater movie running and their show time
+---
+- Name: PVR Gurgaon
+  Address: XYZ
+  Movie: a
+  Show Time: 10AM
+- Name: SRS Gurgaon
+  Address: BCD
+  Movie: B
+  Show Time:
+   - 10am
+   - 3PM
