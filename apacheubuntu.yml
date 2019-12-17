@@ -1,0 +1,9 @@
+---
+#Node 1 is ubuntu machine
+- hosts: node1
+  become: yes
+  tasks:
+   - name: install apache2 on hosts
+     apt:
+      name: apache2
+      state: present
