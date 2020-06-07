@@ -1,0 +1,16 @@
+- hosts: db
+  become: yes
+  tasks:
+    - yum:
+        name: httpd
+        state: latest
+    - service:
+        name: httpd
+        state: restarted
+    - command: chkconfig httpd on
+    - file:
+        path: /var/www/html
+        owner: ansible
+        group: ansible
+        mode: '0775'
+    - shell: echo "<html><h1>welcome to ansible guru</h1></html>" > /var/www/html/index.html
