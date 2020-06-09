@@ -16,8 +16,12 @@
   - shell: export JRE_HOME=/usr
   - get_url:
        url: http://mirror.serverion.com/jenkins/war-stable/2.222.4/jenkins.war
-       dest:/usr/local/apache-tomcat-7.0.104/webapps
+       dest: /usr/local/apache-tomcat-7.0.104/webapps
        owner: ansible
        group: ansible
        mode: '6775'
-  - shell: /usr/local/apache-tomcat-7.0.104/bin/startup.sh
+    notify:
+    - restart tomcat
+  handlers:
+    - name: restart tomcat
+      shell: /usr/local/apache-tomcat-7.0.104/bin/startup.sh
