@@ -1,0 +1,23 @@
+---
+- hosts: db
+  become: yes
+  tasks:
+  - dnf:
+      name: java-1.8.0-openjdk-devel
+      state: present
+      update_cache: yes
+  - unarchive:
+      src: https://mirrors.estointernet.in/apache/tomcat/tomcat-7/v7.0.104/bin/apache-tomcat-7.0.104.tar.gz
+      dest: /usr/local/
+      owner: ansible
+      group: ansible
+      mode: '6775'
+      remote_src: yes
+  - shell: export JRE_HOME=/usr
+  - get_url:
+       url: http://mirror.serverion.com/jenkins/war-stable/2.222.4/jenkins.war
+       dest:/usr/local/apache-tomcat-7.0.104/webapps
+       owner: ansible
+       group: ansible
+       mode: '6775'
+  - shell: /usr/local/apache-tomcat-7.0.104/bin/startup.sh
