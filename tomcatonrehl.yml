@@ -1,0 +1,14 @@
+---
+- hosts: db
+  become: yes
+  tasks:
+  - dnf:
+      name: java-1.8.0-openjdk-devel
+      state: present
+      update_cache: yes
+  - unarchive:
+      src: https://mirrors.estointernet.in/apache/tomcat/tomcat-7/v7.0.104/bin/apache-tomcat-7.0.104.tar.gz
+      dest: /usr/local/
+      remote_src: yes
+  - shell: mv /usr/local/apache-tomcat-7.0.104 /usr/local/tomcat7
+  - shell: /usr/local/tomcat7/bin/startup.sh
