@@ -9,6 +9,9 @@
   - unarchive:
       src: https://mirrors.estointernet.in/apache/tomcat/tomcat-7/v7.0.104/bin/apache-tomcat-7.0.104.tar.gz
       dest: /usr/local/
+      owner: ansible
+      group: ansible
+      mode: '6775'
       remote_src: yes
-  - shell: mv /usr/local/apache-tomcat-7.0.104 /usr/local/tomcat7
-  - shell: /usr/local/tomcat7/bin/startup.sh
+  - shell: export JRE_HOME=/usr
+  - shell: /usr/local/apache-tomcat-7.0.104/bin/startup.sh
