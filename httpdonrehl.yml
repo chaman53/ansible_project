@@ -5,6 +5,11 @@
     - yum:
         name: httpd
         state: latest
+    - lineinfile:
+        path: /etc/httpd/conf/httpd.conf
+        regexp: '^Listen '
+        insertafter: '^#Listen '
+        line: Listen 8080
     - service:
         name: httpd
         state: restarted
@@ -14,4 +19,4 @@
         owner: ansible
         group: ansible
         mode: '0775'
-    - shell: echo "<html><h1>welcome to ansible guru</h1></html>" > /var/www/html/index.html
+    - command: echo "<html><h1>welcome to cloud guru</h1></html>" > index.html
