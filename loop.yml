@@ -1,0 +1,12 @@
+---
+- hosts: app
+  become: yes
+  tasks:
+  - name: install utility
+    yum:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - git
+      - tree
+      - wget
